@@ -32,6 +32,7 @@
 
         </tbody>
     </table>
+    
 
 
 
@@ -47,7 +48,7 @@
             let accordionExample = document.getElementById('accordionExample')
             let accordionData = [
                 {
-                    isShow: true, key: '園區基本資訊', value: `園區名稱：藍鵲渡假莊園<br>
+                    isShow: false, key: '園區基本資訊', value: `園區名稱：藍鵲渡假莊園<br>
                 園區地址：<a target="_blank" href='https://www.google.com.tw/maps/place/%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92/@24.4466032,120.7190907,17z/data=!3m1!4b1!4m6!3m5!1s0x3469062e405b9901:0x1084edfcb9d75e04!8m2!3d24.4466032!4d120.7216603!16s%2Fg%2F11b6gqz_2g?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D'>苗栗縣通霄鎮南和里111號</a><br><br>
                 客服專線：04-25676338<br>
                 服務時間：周一～周六9:00-18:00 <br>莊園現場服務專線：037-783790<br><br>
@@ -61,6 +62,7 @@
                 ‧出「通霄火車站」後前行至 (和平路) 路口(站牌在通霄郵局旁邊)，搭乘苗栗客運往「福興站或大坑尾站」方向於「南和派出所」下車，即可抵達藍鵲渡假莊園。
                 3.出「通霄火車站」後搭乘計程車, 約15分鐘可抵達藍鵲渡假莊園, 車資約250-350元。
                 ` },
+                {isShow:false,key:'園區地圖',value:' <img src="./hotelMap.jpg" style="width: 30%; height: auto;" alt="">'},
                 { isShow: false, key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br>' },
                 {
                     isShow: false, key: '訂房取消規則', value: `
@@ -75,9 +77,9 @@
 
                 { isShow: false, key: '住宿說明', value: '住宿費用包含(早餐卷和入園卷)<br>入園卷會以電子憑證的方式寄送到Email信箱<br><br>一般入住時間為下午3點(連假期間下午4點)，隔天11點退房！<br><br>附有：入園券、早餐券、洗髮精、沐浴乳、吹風機、電水壺<br>所有房型皆含有獨立衛浴、獨立冷暖氣<br>入住所有房間為現場工作人員安排，恕無法指定<br><br><strong>免費提供嬰兒床（小棉被枕頭需自行攜帶）、嬰兒澡盆、小椅凳服務需事先告知</strong><br><strong>嬰兒盥洗用品需自行攜帶、園區無消毒鍋</strong>' },
                 { isShow: false, key: '加床加早餐說明', value: '若入住人數超過房型人數，會酌收入園券，早餐需另外加購<br><br>加床費用-乳膠床墊500元/位，含入園券及隔天早餐券1張，無床架。若有需要請提早告知現場付費即可<br><br>加購早餐：超過90公分一人200元，早餐是自助式吃到飽型式<br>但若入住人數較少，會改以每人一份早餐的型式供應(也可能會有外購早餐)' },
-                { isShow: false, key: '時段說明', value: '園區門禁時間為 22:00~07:00<br>早餐時間為 08:00~09:30，逾時不再供餐<br><br>WIFI: BMRF-XXXX / 密碼：037782883' },
+                { isShow: false, key: '重要時段及WiFi說明', value: '園區門禁時間為 22:00~07:00<br>早餐時間為 08:00~09:30，逾時不再供餐<br><br>WIFI: BMRF-XXXX / 密碼：037782883' },
                 {
-                    isShow: false, key: '重點禁止事項', value: `
+                    isShow: false, key: '禁止事項', value: `
                     房間及衣櫥內嚴禁懸掛濕衣物<br><br>
                     請勿在營區內使用高耗電之電器用品（如：電鍋、電磁爐、烤箱、咖啡機、移動式冷氣、電暖器、電視、音響、卡拉 ok…等）<br><br>
                     露營場地內禁止直接在草地上升火烤肉、野炊 … 等，如需烤肉請自備使用離地 30 公分以上之高腳烤肉架<br><br>
