@@ -20,6 +20,11 @@
 <body>
     <h2 class="text-center">羅以退修會資訊</h2>
 
+    <div style="display: flex;justify-content: center;">
+        <h5 id="currentDate"></h5>
+    </div>
+
+
     <div class="accordion" id="accordionExample">
     </div>
 
@@ -32,7 +37,7 @@
 
         </tbody>
     </table>
-    
+
 
 
 
@@ -42,7 +47,8 @@
 
 
     <script>
-
+        let currentDate = document.getElementById('currentDate')
+        currentDate.innerHTML = ` 現在日期: ${new Date().toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' })}`
         //#region 住宿資訊
         const writeHotelBookingRule = () => {
             let accordionExample = document.getElementById('accordionExample')
@@ -62,8 +68,8 @@
                 ‧出「通霄火車站」後前行至 (和平路) 路口(站牌在通霄郵局旁邊)，搭乘苗栗客運往「福興站或大坑尾站」方向於「南和派出所」下車，即可抵達藍鵲渡假莊園。
                 3.出「通霄火車站」後搭乘計程車, 約15分鐘可抵達藍鵲渡假莊園, 車資約250-350元。
                 ` },
-                {isShow:false,key:'園區地圖',value:' <img src="./hotelMap.jpg" style="width: 30%; height: auto;" alt="">'},
-                { isShow: false, key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br>' },
+                { isShow: false, key: '園區地圖', value: ' <img src="./hotelMap.jpg" style="width: 70%; height: auto;" alt="">' },
+                { isShow: false, key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br><br>訂房網址:<a href="https://bluemagpieresort.rezio.shop/zh-TW/product/Bbookingroom" target="_blank" >預定住宿</a>' },
                 {
                     isShow: false, key: '訂房取消規則', value: `
                 所選日期前 14 天以上(5/16之前) 取消 ，全額退款 <br>
@@ -85,6 +91,20 @@
                     露營場地內禁止直接在草地上升火烤肉、野炊 … 等，如需烤肉請自備使用離地 30 公分以上之高腳烤肉架<br><br>
                     團體租用營地舉辦活動需另行加裝特殊音響設備(音量的大小須遵守園方的規定)、燈光、外叫餐車、餐點、烤山豬、BBQ 者，必須提前告知園區，取得園區同意方可進行，園區會酌收清潔費<br><br>
                     `},
+                {
+                    isShow: true, key: '參加人員名單', value: `
+                    保留中(1人):<br>
+                    1.俞安<br><br>
+
+                    已確定(11人):<br>
+                    1. 瀚元哥、以琳姊、愷晞<br>
+                    2. 宗憲、以琳、恩樂<br>
+                    3. 佳蓮、約賜<br>
+                    4. mimi、周敬<br>
+                    5. 弘奕<br><br>
+
+                    
+                    `}
             ];
             accordionData.forEach((item, index) => {
                 accordionExample.innerHTML += `        
