@@ -79,7 +79,9 @@
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
             <div class="container mt-5">
                 <h2 class="text-center mb-4">苗栗通霄兩天一夜旅遊行程表</h2>
-
+                <div class="d-flex justify-content-center">
+                    <span><a href="https://maps.app.goo.gl/UgsFXD1MFb5X5Em57" target="_blank">完整路線圖</a></span>
+                </div>
                 
                 <div class="d-flex justify-content-between">
                     <h4>第一天</h4>
@@ -90,13 +92,14 @@
                             <tr>
                                 <th>時間</th>
                                 <th>活動名稱</th>
-                                <th>備註</th>
+                                <th>導航</th>
                             </tr>
                         </thead>
                         <tbody id="schedule1">
                         </tbody>
                     </table>
                 </div>
+
                 <div class="d-flex justify-content-between">
                     <h4>第二天</h4>
                 </div>
@@ -166,7 +169,7 @@
                         contentModel = `<tr>
                                 <td>${item.time}</td>
                                 <td>${item.name}</td>
-                                <td>${item.url === '' ? '' : `<a href="${item.url}">${item.urlName}</a>`}</td>
+                                <td>${item.url === '' ? '' : `<a target="_blank" href="${item.url}">${item.urlName}</a>`}</td>
                             </tr>`
                         break;
                     default:
@@ -240,78 +243,79 @@
                 "day": 1,
                 "time": "14:00 - 15:30",
                 "name": "集合與入住",
-                "url": "",
-                "urlName": "苗栗通霄度假莊園"
+                "url": "https://www.google.com/maps/place/%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92/data=!4m2!3m1!1s0x0:0x1084edfcb9d75e04?sa=X&ved=1t:2428&ictx=111",
+                "urlName": "導航-藍鵲渡假莊園"
             },
             {
                 "day": 1,
                 "time": "15:30 - 17:00",
                 "name": "通霄精鹽廠體驗",
-                "url": "https://goo.gl/maps/bE7U8w7Fhbq",
-                "urlName": "Google Map"
+                "url": "https://www.google.com.tw/maps/place/%E8%87%BA%E9%B9%BD%E9%80%9A%E9%9C%84%E8%A7%80%E5%85%89%E5%9C%92%E5%8D%80+(%E8%87%BA%E9%B9%BD%E9%80%9A%E9%9C%84%E7%B2%BE%E9%B9%BD%E5%BB%A0)/@24.5559693,120.7010003,17z/data=!3m1!4b1!4m6!3m5!1s0x3469a6244dbce847:0xcb06400333f06dfe!8m2!3d24.5559644!4d120.7035752!16s%2Fg%2F12lk_zhg2?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-通霄精鹽廠"
             },
             {
                 "day": 1,
                 "time": "17:30 - 19:00",
-                "name": "晚餐 - 客家風味餐",
-                "url": "",
-                "urlName": "通霄市區"
+                "name": "晚餐 - 新海樓餐廳",
+                "url": "https://www.google.com.tw/maps/place/%E6%96%B0%E6%B5%B7%E6%A8%93%E9%A4%90%E5%BB%B3/@24.5504205,120.6975144,17z/data=!4m14!1m7!3m6!1s0x3469a6244dbce847:0xcb06400333f06dfe!2z6Ie66bm96YCa6ZyE6KeA5YWJ5ZyS5Y2AICjoh7rpub3pgJrpnITnsr7pub3lu6Ap!8m2!3d24.5559644!4d120.7035752!16s%2Fg%2F12lk_zhg2!3m5!1s0x3469a61f74e916fd:0xdfa8f38047e83155!8m2!3d24.5504205!4d120.6975144!16s%2Fg%2F1thmhr1k?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-新海樓餐廳"
             },
             {
                 "day": 1,
                 "time": "19:30 - 22:00",
-                "name": "晚會 - 露天燒烤音樂派對",
-                "url": "",
-                "urlName": "苗栗通霄度假莊園"
+                "name": "羅以晚會",
+                "url": "https://www.google.com/maps/place/%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92/data=!4m2!3m1!1s0x0:0x1084edfcb9d75e04?sa=X&ved=1t:2428&ictx=111",
+                "urlName": "導航-藍鵲渡假莊園"
             },
             {
                 "day": 1,
                 "time": "22:30",
                 "name": "休息",
                 "url": "",
-                "urlName": "苗栗通霄度假莊園"
+                "urlName": "藍鵲渡假莊園"
             },
             {
                 "day": 2,
-                "time": "07:30 - 08:30",
-                "name": "早餐",
+                "time": "07:30 - 09:00",
+                "name": "早餐-附設肯芙咖啡廳",
                 "url": "",
-                "urlName": "苗栗通霄度假莊園"
+                "urlName": "藍鵲渡假莊園"
             },
             {
                 "day": 2,
-                "time": "09:00 - 10:30",
-                "name": "飛牛牧場親子活動",
-                "url": "https://goo.gl/maps/8K8wJjwZV9w",
-                "urlName": "Google Map"
+                "time": "09:00 - 11:30",
+                "name": "蘭草文化館DIY",
+                "url": "https://www.google.com/maps/place/%E8%97%BA%E8%8D%89%E6%96%87%E5%8C%96%E9%A4%A8/@24.4144019,120.6830481,17z/data=!3m1!4b1!4m6!3m5!1s0x34690f2555555555:0xad4355002924d70c!8m2!3d24.414397!4d120.685623!16s%2Fg%2F1pzq4rtdj?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-蘭草文化館DIY"
             },
+            
             {
                 "day": 2,
-                "time": "11:00 - 12:30",
-                "name": "白沙屯拱天宮參拜",
-                "url": "https://goo.gl/maps/MFqKcXnPrdJ2",
-                "urlName": "Google Map"
-            },
-            {
-                "day": 2,
-                "time": "12:30 - 14:00",
-                "name": "午餐 - 通霄老街小吃",
-                "url": "",
-                "urlName": "通霄老街"
+                "time": "11:30 - 14:00",
+                "name": "午餐 - 便所麵",
+                "url": "https://www.google.com/maps/place/%E4%BE%BF%E6%89%80%E9%BA%B5/data=!4m2!3m1!1s0x0:0x3555fc42d311d1d1?sa=X&ved=1t:2428&ictx=111",
+                "urlName": "導航-便所麵"
             },
             {
                 "day": 2,
                 "time": "14:30 - 16:30",
-                "name": "龍貓隧道森林步道健行",
-                "url": "https://goo.gl/maps/7X2jGzA2cUB2",
-                "urlName": "Google Map"
+                "name": "出水沙灘海景散步",
+                "url": "https://www.google.com/maps/place/%E5%87%BA%E6%B0%B4%E6%B2%99%E7%81%98(%E6%B2%99%E6%BC%A0)%E9%80%9A%E9%9C%84%E5%8D%97/@24.4515406,120.6395728,17z/data=!4m6!3m5!1s0x3469095780a22dd9:0xa7f38b8bc385a32c!8m2!3d24.4505127!4d120.6382022!16s%2Fg%2F11kr35s162?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-出水沙灘"
             },
             {
                 "day": 2,
                 "time": "17:00 - 18:30",
-                "name": "晚餐 - 海鮮大餐",
-                "url": "",
-                "urlName": "通霄漁港"
+                "name": "晚餐 - 海口魷魚羹麵店",
+                "url": "https://www.google.com.tw/maps/place/%E6%B5%B7%E5%8F%A3%E9%AD%B7%E9%AD%9A%E7%BE%B9%E9%BA%B5%E5%BA%97/@24.4460459,120.6350291,17z/data=!3m1!4b1!4m6!3m5!1s0x346909fe1073b47d:0x3646297ce83fe95b!8m2!3d24.446041!4d120.637604!16s%2Fg%2F11gh6bdc7c?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-海口魷魚羹"
+            },
+            {
+                "day": 2,
+                "time": "18:30~",
+                "name": "賦歸",
+                "url": "https://www.google.com.tw/maps/place/%E8%87%BA%E7%81%A3%E5%9F%BA%E7%9D%A3%E9%95%B7%E8%80%81%E6%95%99%E6%9C%83+%E5%8D%97%E5%B4%81%E6%95%99%E6%9C%83/@25.0464856,121.2910898,17z/data=!3m1!4b1!4m6!3m5!1s0x34681fd88600a053:0x40c59e34a66e3ab0!8m2!3d25.0464808!4d121.2936647!16s%2Fg%2F1pzrw3l7j?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+                "urlName": "導航-南崁教會"
             }
         ];
 
