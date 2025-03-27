@@ -17,24 +17,154 @@
 
 <body>
     <h2 class="text-center">羅以退修會資訊</h2>
-
     <div class="d-flex justify-content-center">
         <h5 id="currentDate"></h5>
     </div>
 
-    <div class="accordion" id="accordionExample"></div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">住宿基本資訊</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">房型</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
+                type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">參加人員</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">預設行程</button>
+        </li>
 
-    <table class="table table-striped mt-5" id="hotelInfoTable">
-        <thead>
-            <tr id="titlesTD"></tr>
-        </thead>
-        <tbody id="infos"></tbody>
-    </table>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+            tabindex="0">
+            <div class="accordion" id="accordionExample"></div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <table class="table table-striped mt-5" id="hotelInfoTable">
+                <thead>
+                    <tr id="titlesTD"></tr>
+                </thead>
+                <tbody id="infos"></tbody>
+            </table>
+        </div>
+        <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
+            <div class="container mt-5">
+                <h3 class="text-center">參加人員名單</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>保留中 (1人):</h5>
+                        <ul>
+                            <li>俞安</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>已確定 (11人):</h5>
+                        <ul>
+                            <li>瀚元哥、以琳姊、愷晞</li>
+                            <li>宗憲、以琳、恩樂</li>
+                            <li>佳蓮、約賜</li>
+                            <li>mimi、周敬</li>
+                            <li>弘奕</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            <div class="container mt-5">
+                <h2 class="text-center mb-4">苗栗通霄兩天一夜旅遊行程表</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>時間</th>
+                                <th>活動名稱</th>
+                                <th>備註</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- 第一天 -->
+                            <tr class="table-primary">
+                                <td colspan="3"><strong>第一天</strong></td>
+                            </tr>
+                            <tr>
+                                <td>14:00 - 15:30</td>
+                                <td>集合與入住</td>
+                                <td>苗栗通霄度假莊園</td>
+                            </tr>
+                            <tr>
+                                <td>15:30 - 17:00</td>
+                                <td>通霄精鹽廠體驗</td>
+                                <td><a href="https://goo.gl/maps/bE7U8w7Fhbq">Google Map</a></td>
+                            </tr>
+                            <tr>
+                                <td>17:30 - 19:00</td>
+                                <td>晚餐 - 客家風味餐</td>
+                                <td>通霄市區</td>
+                            </tr>
+                            <tr>
+                                <td>19:30 - 22:00</td>
+                                <td>晚會 - 露天燒烤音樂派對</td>
+                                <td>苗栗通霄度假莊園</td>
+                            </tr>
+                            <tr>
+                                <td>22:30</td>
+                                <td>休息</td>
+                                <td>苗栗通霄度假莊園</td>
+                            </tr>
+
+                            <!-- 第二天 -->
+                            <tr class="table-success">
+                                <td colspan="3"><strong>第二天</strong></td>
+                            </tr>
+                            <tr>
+                                <td>07:30 - 08:30</td>
+                                <td>早餐</td>
+                                <td>苗栗通霄度假莊園</td>
+                            </tr>
+                            <tr>
+                                <td>09:00 - 10:30</td>
+                                <td>飛牛牧場親子活動</td>
+                                <td><a href="https://goo.gl/maps/8K8wJjwZV9w">Google Map</a></td>
+                            </tr>
+                            <tr>
+                                <td>11:00 - 12:30</td>
+                                <td>白沙屯拱天宮參拜</td>
+                                <td><a href="https://goo.gl/maps/MFqKcXnPrdJ2">Google Map</a></td>
+                            </tr>
+                            <tr>
+                                <td>12:30 - 14:00</td>
+                                <td>午餐 - 通霄老街小吃</td>
+                                <td>通霄老街</td>
+                            </tr>
+                            <tr>
+                                <td>14:30 - 16:30</td>
+                                <td>龍貓隧道森林步道健行</td>
+                                <td><a href="https://goo.gl/maps/7X2jGzA2cUB2">Google Map</a></td>
+                            </tr>
+                            <tr>
+                                <td>17:00 - 18:30</td>
+                                <td>晚餐 - 海鮮大餐</td>
+                                <td>通霄漁港</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-
     <script>
         const setContent = (id, contentArray, contentType) => {
             let el = document.getElementById(id);
@@ -124,17 +254,6 @@
                                             請勿在營區內使用高耗電之電器用品（如：電鍋、電磁爐、烤箱、咖啡機、移動式冷氣、電暖器、電視、音響、卡拉 ok…等）<br><br>
                                             露營場地內禁止直接在草地上升火烤肉、野炊 … 等，如需烤肉請自備使用離地 30 公分以上之高腳烤肉架<br><br>
                                             團體租用營地舉辦活動需另行加裝特殊音響設備(音量的大小須遵守園方的規定)、燈光、外叫餐車、餐點、烤山豬、BBQ 者，必須提前告知園區，取得園區同意方可進行，園區會酌收清潔費<br><br>`
-            },
-            {
-                key: '參加人員名單', value: `
-                                            保留中(1人):<br>
-                                            1.俞安<br><br>
-                                            已確定(11人):<br>
-                                            1. 瀚元哥、以琳姊、愷晞<br>
-                                            2. 宗憲、以琳、恩樂<br>
-                                            3. 佳蓮、約賜<br>
-                                            4. mimi、周敬<br>
-                                            5. 弘奕<br><br>`
             }
         ];
         const titles = ['#', '名稱', '房型', '價格', '備註', '可加床', '可加嬰兒床'];
