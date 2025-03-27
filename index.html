@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
@@ -11,174 +11,156 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        * {
-            /* user-select: none; */
-        }
+
     </style>
 </head>
 
 <body>
     <h2 class="text-center">羅以退修會資訊</h2>
 
-    <div style="display: flex;justify-content: center;">
+    <div class="d-flex justify-content-center">
         <h5 id="currentDate"></h5>
     </div>
 
+    <div class="accordion" id="accordionExample"></div>
 
-    <div class="accordion" id="accordionExample">
-    </div>
-
-    <table class="table table-striped" id="hotelInfoTable" style="margin-top: 50px;">
+    <table class="table table-striped mt-5" id="hotelInfoTable">
         <thead>
-            <tr id="titlesTD">
-            </tr>
+            <tr id="titlesTD"></tr>
         </thead>
-        <tbody id="infos">
-
-        </tbody>
+        <tbody id="infos"></tbody>
     </table>
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-
     <script>
-        let currentDate = document.getElementById('currentDate')
-        currentDate.innerHTML = ` 現在日期: ${new Date().toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' })}`
-        //#region 住宿資訊
-        const writeHotelBookingRule = () => {
-            let accordionExample = document.getElementById('accordionExample')
-            let accordionData = [
-                {
-                    isShow: false, key: '園區基本資訊', value: `園區名稱：藍鵲渡假莊園<br>
-                園區地址：<a target="_blank" href='https://www.google.com.tw/maps/place/%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92/@24.4466032,120.7190907,17z/data=!3m1!4b1!4m6!3m5!1s0x3469062e405b9901:0x1084edfcb9d75e04!8m2!3d24.4466032!4d120.7216603!16s%2Fg%2F11b6gqz_2g?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D'>苗栗縣通霄鎮南和里111號</a><br><br>
-                客服專線：04-25676338<br>
-                服務時間：周一～周六9:00-18:00 <br>莊園現場服務專線：037-783790<br><br>
-                公共設施：高爾夫球推桿區、兒童戲水池、砂池、多功能運動場、兒童溜滑梯
-                <br>營區雨備場有提供冷藏公共冰箱<br><br><br>
-                補充說明：<br>
-                1. 自行開車：
-                ‧請由國道一號三義交流道下，往三義方向，過三義火車站後，由中正路高架橋旁轉入苗48鄉道，沿苗48鄉道直行約10分鐘接121縣道，即可抵達藍鵲渡假莊園（南和國中旁）。
-                ‧請由國道三號通霄交流道下，往通霄市區直行接台1線左轉，過通霄隧道後左轉接121縣道，直行約10分鐘即可抵達藍鵲渡假莊園（南和國中旁）。<br><br>
-                2.大眾運輸：
-                ‧出「通霄火車站」後前行至 (和平路) 路口(站牌在通霄郵局旁邊)，搭乘苗栗客運往「福興站或大坑尾站」方向於「南和派出所」下車，即可抵達藍鵲渡假莊園。
-                3.出「通霄火車站」後搭乘計程車, 約15分鐘可抵達藍鵲渡假莊園, 車資約250-350元。
-                ` },
-                { isShow: false, key: '園區地圖', value: ' <img src="./hotelMap.jpg" style="width: 70%; height: auto;" alt="">' },
-                { isShow: false, key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br><br>訂房網址:<a href="https://bluemagpieresort.rezio.shop/zh-TW/product/Bbookingroom" target="_blank" >預定住宿</a>' },
-                {
-                    isShow: false, key: '訂房取消規則', value: `
-                所選日期前 14 天以上(5/16之前) 取消 ，全額退款 <br>
-                所選日期前 9～13 天之間 (5/17~5/21) 取消，收取手續費 30% <br>
-                所選日期前 4～8 天之間 (5/22~5/26) 取消，收取手續費 50% <br>
-                所選日期前 1～3 天之間 (5/27~5/29) 取消，收取手續費 70% <br>
-                所選日期當天取消，無法退款 (5/30)<br><br>
-                需扣除銀行匯費30元餘額全額退還不便之處請見諒！<br>
-                無提供延期 ，無提供延期 ，無提供延期 <br>
-                ` },
+        const setContent = (id, contentArray, contentType) => {
+            let el = document.getElementById(id);
+            contentArray.map((item, index) => {
+                let contentModel = '';
+                switch (contentType) {
+                    case 'date':
+                        contentModel = `現在日期: ${new Date().toLocaleDateString('zh-TW', { year: 'numeric', month: '2-digit', day: '2-digit' })}`;
+                        break;
+                    case 'basic':
+                        contentModel = `
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="heading${index}">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}"
+                                aria-expanded="true" aria-controls="collapse${index}">
+                                ${item.key}
+                            </button>
+                        </h2>
+                        <div id="collapse${index}" class="accordion-collapse collapse ${item.isShow ? 'show' : ''}" aria-labelledby="heading${index}"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                ${item.value}
+                            </div>
+                        </div>
+                    </div>`
+                        break;
+                    case 'tableHead':
+                        contentModel = `<th scope="col">${item}</th>`
+                        break;
+                    case 'tableInfo':
+                        contentModel = `<tr>
+                        <th scope="row">${index + 1}</th>
+                        <td>${item.name}</td>
+                        <td>${item.type}</td>
+                        <td>${item.price}</td>
+                        <td>${item.note}</td>
+                        <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
+                        <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
+                    </tr>`
+                        break;
 
-                { isShow: false, key: '住宿說明', value: '住宿費用包含(早餐卷和入園卷)<br>入園卷會以電子憑證的方式寄送到Email信箱<br><br>一般入住時間為下午3點(連假期間下午4點)，隔天11點退房！<br><br>附有：入園券、早餐券、洗髮精、沐浴乳、吹風機、電水壺<br>所有房型皆含有獨立衛浴、獨立冷暖氣<br>入住所有房間為現場工作人員安排，恕無法指定<br><br><strong>免費提供嬰兒床（小棉被枕頭需自行攜帶）、嬰兒澡盆、小椅凳服務需事先告知</strong><br><strong>嬰兒盥洗用品需自行攜帶、園區無消毒鍋</strong>' },
-                { isShow: false, key: '加床加早餐說明', value: '若入住人數超過房型人數，會酌收入園券，早餐需另外加購<br><br>加床費用-乳膠床墊500元/位，含入園券及隔天早餐券1張，無床架。若有需要請提早告知現場付費即可<br><br>加購早餐：超過90公分一人200元，早餐是自助式吃到飽型式<br>但若入住人數較少，會改以每人一份早餐的型式供應(也可能會有外購早餐)' },
-                { isShow: false, key: '重要時段及WiFi說明', value: '園區門禁時間為 22:00~07:00<br>早餐時間為 08:00~09:30，逾時不再供餐<br><br>WIFI: BMRF-XXXX / 密碼：037782883' },
-                {
-                    isShow: false, key: '禁止事項', value: `
-                    房間及衣櫥內嚴禁懸掛濕衣物<br><br>
-                    請勿在營區內使用高耗電之電器用品（如：電鍋、電磁爐、烤箱、咖啡機、移動式冷氣、電暖器、電視、音響、卡拉 ok…等）<br><br>
-                    露營場地內禁止直接在草地上升火烤肉、野炊 … 等，如需烤肉請自備使用離地 30 公分以上之高腳烤肉架<br><br>
-                    團體租用營地舉辦活動需另行加裝特殊音響設備(音量的大小須遵守園方的規定)、燈光、外叫餐車、餐點、烤山豬、BBQ 者，必須提前告知園區，取得園區同意方可進行，園區會酌收清潔費<br><br>
-                    `},
-                {
-                    isShow: true, key: '參加人員名單', value: `
-                    保留中(1人):<br>
-                    1.俞安<br><br>
+                    default:
+                        break;
+                }
 
-                    已確定(11人):<br>
-                    1. 瀚元哥、以琳姊、愷晞<br>
-                    2. 宗憲、以琳、恩樂<br>
-                    3. 佳蓮、約賜<br>
-                    4. mimi、周敬<br>
-                    5. 弘奕<br><br>
-
-                    
-                    `}
-            ];
-            accordionData.forEach((item, index) => {
-                accordionExample.innerHTML += `        
-            <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne${index}"
-                    aria-expanded="true" aria-controls="collapseOne${index}">
-                    ${item.key}
-                </button>
-            </h2>
-            <div id="collapseOne${index}" class="accordion-collapse collapse ${item.isShow == true ? 'show' : ''} " aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                   ${item.value}
-                </div>
-            </div>
-        </div>`
-            });
-        }
-
-        const writeHotelInfo = () => {
-            let hotelInfoTable = document.getElementById('hotelInfoTable')
-
-            let titlesTD = document.getElementById('titlesTD')
-            let titles = ['#', '名稱', '房型', '價格', '備註', '可加床', '可加嬰兒床']
-            titles.map(i => {
-                titlesTD.innerHTML += `<th scope="col">${i}</th>`
-            });
-
-            let infos = document.getElementById('infos')
-            let info = [
-                { name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-                { name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-                { name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-                { name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-
-                { name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-                { name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-                { name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-
-                { name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
-                { name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
-                { name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false },
-                { name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false },
-            ]
-            info.map((i, idx) => {
-                infos.innerHTML += `
-                            <tr>
-                                <th scope="row">${idx + 1}</th>
-                                <td>${i.name}</td>
-                                <td>${i.type}</td>
-                                <td>${i.price}</td>
-                                <td>${i.note}</td>
-                                <td>${i.addBedOk == true ? '<i class="fa-regular fa-circle" style="color:green" ></i>' : i.addBedOk == null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
-                                <td>${i.addInfantBedOk == true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : i.addBedOk == null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
-                            </tr>
-                `
+                el.innerHTML += contentModel
             })
         }
 
 
-        //#endregion
 
-
-
-
-
+        const accordionData = [
+            {
+                key: '園區基本資訊',
+                value: `園區名稱：藍鵲渡假莊園<br>
+        園區地址：<a target="_blank" href='https://www.google.com.tw/maps/place/%E8%97%8D%E9%B5%B2%E6%B8%A1%E5%81%87%E8%8E%8A%E5%9C%92/@24.4466032,120.7190907,17z/data=!3m1!4b1!4m6!3m5!1s0x3469062e405b9901:0x1084edfcb9d75e04!8m2!3d24.4466032!4d120.7216603!16s%2Fg%2F11b6gqz_2g?entry=ttu&g_ep=EgoyMDI1MDMxOS4yIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D'>苗栗縣通霄鎮南和里111號</a><br><br>
+        客服專線：04-25676338<br>
+        服務時間：周一～周六9:00-18:00 <br>莊園現場服務專線：037-783790<br><br>
+        公共設施：高爾夫球推桿區、兒童戲水池、砂池、多功能運動場、兒童溜滑梯
+        <br>營區雨備場有提供冷藏公共冰箱<br><br><br>
+        補充說明：<br>
+        1. 自行開車：
+        ‧請由國道一號三義交流道下，往三義方向，過三義火車站後，由中正路高架橋旁轉入苗48鄉道，沿苗48鄉道直行約10分鐘接121縣道，即可抵達藍鵲渡假莊園（南和國中旁）。
+        ‧請由國道三號通霄交流道下，往通霄市區直行接台1線左轉，過通霄隧道後左轉接121縣道，直行約10分鐘即可抵達藍鵲渡假莊園（南和國中旁）。<br><br>
+        2.大眾運輸：
+        ‧出「通霄火車站」後前行至 (和平路) 路口(站牌在通霄郵局旁邊)，搭乘苗栗客運往「福興站或大坑尾站」方向於「南和派出所」下車，即可抵達藍鵲渡假莊園。
+        3.出「通霄火車站」後搭乘計程車, 約15分鐘可抵達藍鵲渡假莊園, 車資約250-350元。`
+            },
+            { key: '園區地圖', value: '<img src="./hotelMap.jpg" style="width: 70%; height: auto;" alt="">' },
+            { key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br><br>訂房網址:<a href="https://bluemagpieresort.rezio.shop/zh-TW/product/Bbookingroom" target="_blank" >預定住宿</a>' },
+            {
+                key: '訂房取消規則', value: `
+                                            所選日期前 14 天以上(5/16之前) 取消 ，全額退款 <br>
+                                            所選日期前 9～13 天之間 (5/17~5/21) 取消，收取手續費 30% <br>
+                                            所選日期前 4～8 天之間 (5/22~5/26) 取消，收取手續費 50% <br>
+                                            所選日期前 1～3 天之間 (5/27~5/29) 取消，收取手續費 70% <br>
+                                            所選日期當天取消，無法退款 (5/30)<br><br>
+                                            需扣除銀行匯費30元餘額全額退還不便之處請見諒！<br>
+                                            無提供延期 ，無提供延期 ，無提供延期 <br>`
+            },
+            { key: '住宿說明', value: '住宿費用包含(早餐卷和入園卷)<br>入園卷會以電子憑證的方式寄送到Email信箱<br><br>一般入住時間為下午3點(連假期間下午4點)，隔天11點退房！<br><br>附有：入園券、早餐券、洗髮精、沐浴乳、吹風機、電水壺<br>所有房型皆含有獨立衛浴、獨立冷暖氣<br>入住所有房間為現場工作人員安排，恕無法指定<br><br><strong>免費提供嬰兒床（小棉被枕頭需自行攜帶）、嬰兒澡盆、小椅凳服務需事先告知</strong><br><strong>嬰兒盥洗用品需自行攜帶、園區無消毒鍋</strong>' },
+            { key: '加床加早餐說明', value: '若入住人數超過房型人數，會酌收入園券，早餐需另外加購<br><br>加床費用-乳膠床墊500元/位，含入園券及隔天早餐券1張，無床架。若有需要請提早告知現場付費即可<br><br>加購早餐：超過90公分一人200元，早餐是自助式吃到飽型式<br>但若入住人數較少，會改以每人一份早餐的型式供應(也可能會有外購早餐)' },
+            { key: '重要時段及WiFi說明', value: '園區門禁時間為 22:00~07:00<br>早餐時間為 08:00~09:30，逾時不再供餐<br><br>WIFI: BMRF-XXXX / 密碼：037782883' },
+            {
+                key: '禁止事項', value: `
+                                            房間及衣櫥內嚴禁懸掛濕衣物<br><br>
+                                            請勿在營區內使用高耗電之電器用品（如：電鍋、電磁爐、烤箱、咖啡機、移動式冷氣、電暖器、電視、音響、卡拉 ok…等）<br><br>
+                                            露營場地內禁止直接在草地上升火烤肉、野炊 … 等，如需烤肉請自備使用離地 30 公分以上之高腳烤肉架<br><br>
+                                            團體租用營地舉辦活動需另行加裝特殊音響設備(音量的大小須遵守園方的規定)、燈光、外叫餐車、餐點、烤山豬、BBQ 者，必須提前告知園區，取得園區同意方可進行，園區會酌收清潔費<br><br>`
+            },
+            {
+                key: '參加人員名單', value: `
+                                            保留中(1人):<br>
+                                            1.俞安<br><br>
+                                            已確定(11人):<br>
+                                            1. 瀚元哥、以琳姊、愷晞<br>
+                                            2. 宗憲、以琳、恩樂<br>
+                                            3. 佳蓮、約賜<br>
+                                            4. mimi、周敬<br>
+                                            5. 弘奕<br><br>`
+            }
+        ];
+        const titles = ['#', '名稱', '房型', '價格', '備註', '可加床', '可加嬰兒床'];
+        const info = [
+            { name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
+            { name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
+            { name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false },
+            { name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false },
+        ];
 
         window.onload = () => {
-            writeHotelBookingRule();
-            writeHotelInfo();
+            setContent('currentDate', [''], 'date')
+            setContent('accordionExample', accordionData, 'basic')
+            setContent('titlesTD', titles, 'tableHead')
+            setContent('infos', info, 'tableInfo')
         }
-    </script>
 
+
+    </script>
 </body>
 
 </html>
