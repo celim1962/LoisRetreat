@@ -46,19 +46,22 @@
             <div class="accordion" id="accordionExample"></div>
         </div>
         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-            
+
             <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px;">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">藍鵲會館</button>
+                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                        type="button" role="tab" aria-controls="home" aria-selected="true">藍鵲會館</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">檜意村小木屋</button>
+                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                        type="button" role="tab" aria-controls="profile" aria-selected="false">檜意村小木屋</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">其他</button>
+                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                        type="button" role="tab" aria-controls="contact" aria-selected="false">其他</button>
                 </li>
-              </ul>
-              <div class="tab-content" id="myTabContent">
+            </ul>
+            <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <table class="table table-striped mt-5" id="hotelInfoTable">
                         <thead>
@@ -83,8 +86,13 @@
                         <tbody id="infos3"></tbody>
                     </table>
                 </div>
-              </div>
-            
+            </div>
+
+            <div id="modalDisplay">
+                
+            </div>
+
+
         </div>
         <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
             <div class="container mt-5">
@@ -161,6 +169,8 @@
     <script>
         const setContent = (id, contentArray, contentType) => {
             let el = document.getElementById(id);
+            let modalDisplay = document.getElementById('modalDisplay');
+
             contentArray.map((item, index) => {
                 let contentModel = '';
                 switch (contentType) {
@@ -192,11 +202,30 @@
                         <th scope="row">${index + 1}</th>
                         <td>${item.name}</td>
                         <td>${item.type}</td>
-                        <td>${item.price}</td>
-                        <td>${item.note}</td>
+                        <td>$ ${item.price}</td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
+                                查看
+                            </button>    
+                        </td>
                         <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
                         <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
-                    </tr>`
+                    </tr>`;
+                    modalDisplay.innerHTML+=`<div class="modal fade" id="exampleModal${index}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">${item.name}-${item.type} $ ${item.price}</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ${item.note}
+                            </div>
+                        </div>
+                    </div>
+                </div>`
                         break;
                     case 'schedule':
                         contentModel = `<tr>
@@ -257,17 +286,17 @@
         ];
         const titles = ['#', '名稱', '房型', '價格', '備註', '可加床', '可加嬰兒床'];
         const info = [
-            { isShow:true,name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-            { isShow:true,name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-            { isShow:true,name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-            { isShow:true,name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
-            { isShow:false,name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-            { isShow:false,name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-            { isShow:false,name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
-            { isShow:false,name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
-            { isShow:false,name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
-            { isShow:false,name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false },
-            { isShow:false,name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false },
+            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { isShow: true, name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { isShow: true, name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
+            { isShow: false, name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { isShow: false, name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { isShow: false, name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null },
+            { isShow: false, name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
+            { isShow: false, name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false },
+            { isShow: false, name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false },
+            { isShow: false, name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false },
         ];
 
 
@@ -357,9 +386,9 @@
             setContent('currentDate', [''], 'date')
             setContent('accordionExample', accordionData, 'basic')
             setContent('titlesTD', titles, 'tableHead')
-            setContent('infos1', info.filter(i=>i.name==='藍鵲會館'), 'tableInfo')
-            setContent('infos2', info.filter(i=>i.name==='檜意村小木屋'), 'tableInfo')
-            setContent('infos3', info.filter(i=>i.name!=='檜意村小木屋'&&i.name!=='藍鵲會館'), 'tableInfo')
+            setContent('infos1', info.filter(i => i.name === '藍鵲會館'), 'tableInfo')
+            setContent('infos2', info.filter(i => i.name === '檜意村小木屋'), 'tableInfo')
+            setContent('infos3', info.filter(i => i.name !== '檜意村小木屋' && i.name !== '藍鵲會館'), 'tableInfo')
             setContent('schedule1', scheduleInfo.filter(i => i.day === 1), 'schedule')
             setContent('schedule2', scheduleInfo.filter(i => i.day === 2), 'schedule')
         }
