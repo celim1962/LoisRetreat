@@ -65,7 +65,7 @@
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <table class="table table-striped mt-5" id="hotelInfoTable">
                         <thead>
-                            <tr id="titlesTD"></tr>
+                            <tr id="titlesTD1"></tr>
                         </thead>
                         <tbody id="infos1"></tbody>
                     </table>
@@ -73,7 +73,7 @@
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <table class="table table-striped mt-5" id="hotelInfoTable">
                         <thead>
-                            <tr id="titlesTD"></tr>
+                            <tr id="titlesTD2"></tr>
                         </thead>
                         <tbody id="infos2"></tbody>
                     </table>
@@ -81,7 +81,7 @@
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <table class="table table-striped mt-5" id="hotelInfoTable">
                         <thead>
-                            <tr id="titlesTD"></tr>
+                            <tr id="titlesTD3"></tr>
                         </thead>
                         <tbody id="infos3"></tbody>
                     </table>
@@ -205,7 +205,7 @@
                         <td>$ ${item.price}</td>
                         <td>
                             <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal${index}">
-                                查看
+                                備註
                             </button>    
                         </td>
                         <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
@@ -284,7 +284,7 @@
                                             團體租用營地舉辦活動需另行加裝特殊音響設備(音量的大小須遵守園方的規定)、燈光、外叫餐車、餐點、烤山豬、BBQ 者，必須提前告知園區，取得園區同意方可進行，園區會酌收清潔費<br><br>`
             }
         ];
-        const titles = ['#', '名稱', '房型', '價格', '備註', '可加床', '可加嬰兒床'];
+        const titles = ['#', '名稱', '房型', '價格', '備註', '加床', '加嬰兒床'];
         const info = [
             { isShow: true, name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
             { isShow: true, name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false },
@@ -385,7 +385,9 @@
         window.onload = () => {
             setContent('currentDate', [''], 'date')
             setContent('accordionExample', accordionData, 'basic')
-            setContent('titlesTD', titles, 'tableHead')
+            setContent('titlesTD1', titles, 'tableHead')
+            setContent('titlesTD2', titles, 'tableHead')
+            setContent('titlesTD3', titles, 'tableHead')
             setContent('infos1', info.filter(i => i.name === '藍鵲會館'), 'tableInfo')
             setContent('infos2', info.filter(i => i.name === '檜意村小木屋'), 'tableInfo')
             setContent('infos3', info.filter(i => i.name !== '檜意村小木屋' && i.name !== '藍鵲會館'), 'tableInfo')
