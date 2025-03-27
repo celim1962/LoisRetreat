@@ -80,80 +80,37 @@
             <div class="container mt-5">
                 <h2 class="text-center mb-4">苗栗通霄兩天一夜旅遊行程表</h2>
 
+                
+                <div class="d-flex justify-content-between">
+                    <h4>第一天</h4>
+                </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped text-center">
-                        <thead class="table-dark">
+                        <thead class="table-primary">
                             <tr>
                                 <th>時間</th>
                                 <th>活動名稱</th>
                                 <th>備註</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <!-- 第一天 -->
-                            <tr class="table-primary">
-                                <td colspan="3"><strong>第一天</strong></td>
-                            </tr>
+                        <tbody id="schedule1">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <h4>第二天</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="table-success">
                             <tr>
-                                <td>14:00 - 15:30</td>
-                                <td>集合與入住</td>
-                                <td>苗栗通霄度假莊園</td>
+                                <th>時間</th>
+                                <th>活動名稱</th>
+                                <th>備註</th>
                             </tr>
-                            <tr>
-                                <td>15:30 - 17:00</td>
-                                <td>通霄精鹽廠體驗</td>
-                                <td><a href="https://goo.gl/maps/bE7U8w7Fhbq">Google Map</a></td>
-                            </tr>
-                            <tr>
-                                <td>17:30 - 19:00</td>
-                                <td>晚餐 - 客家風味餐</td>
-                                <td>通霄市區</td>
-                            </tr>
-                            <tr>
-                                <td>19:30 - 22:00</td>
-                                <td>晚會 - 露天燒烤音樂派對</td>
-                                <td>苗栗通霄度假莊園</td>
-                            </tr>
-                            <tr>
-                                <td>22:30</td>
-                                <td>休息</td>
-                                <td>苗栗通霄度假莊園</td>
-                            </tr>
+                        </thead>
+                        <tbody id="schedule2">
 
-                            <!-- 第二天 -->
-                            <tr class="table-success">
-                                <td colspan="3"><strong>第二天</strong></td>
-                            </tr>
-                            <tr>
-                                <td>07:30 - 08:30</td>
-                                <td>早餐</td>
-                                <td>苗栗通霄度假莊園</td>
-                            </tr>
-                            <tr>
-                                <td>09:00 - 10:30</td>
-                                <td>飛牛牧場親子活動</td>
-                                <td><a href="https://goo.gl/maps/8K8wJjwZV9w">Google Map</a></td>
-                            </tr>
-                            <tr>
-                                <td>11:00 - 12:30</td>
-                                <td>白沙屯拱天宮參拜</td>
-                                <td><a href="https://goo.gl/maps/MFqKcXnPrdJ2">Google Map</a></td>
-                            </tr>
-                            <tr>
-                                <td>12:30 - 14:00</td>
-                                <td>午餐 - 通霄老街小吃</td>
-                                <td>通霄老街</td>
-                            </tr>
-                            <tr>
-                                <td>14:30 - 16:30</td>
-                                <td>龍貓隧道森林步道健行</td>
-                                <td><a href="https://goo.gl/maps/7X2jGzA2cUB2">Google Map</a></td>
-                            </tr>
-                            <tr>
-                                <td>17:00 - 18:30</td>
-                                <td>晚餐 - 海鮮大餐</td>
-                                <td>通霄漁港</td>
-                            </tr>
                         </tbody>
                     </table>
                 </div>
@@ -205,7 +162,13 @@
                         <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
                     </tr>`
                         break;
-
+                    case 'schedule':
+                        contentModel = `<tr>
+                                <td>${item.time}</td>
+                                <td>${item.name}</td>
+                                <td>${item.url === '' ? '' : `<a href="${item.url}">${item.urlName}</a>`}</td>
+                            </tr>`
+                        break;
                     default:
                         break;
                 }
@@ -271,11 +234,95 @@
             { name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false },
         ];
 
+
+        const scheduleInfo = [
+            {
+                "day": 1,
+                "time": "14:00 - 15:30",
+                "name": "集合與入住",
+                "url": "",
+                "urlName": "苗栗通霄度假莊園"
+            },
+            {
+                "day": 1,
+                "time": "15:30 - 17:00",
+                "name": "通霄精鹽廠體驗",
+                "url": "https://goo.gl/maps/bE7U8w7Fhbq",
+                "urlName": "Google Map"
+            },
+            {
+                "day": 1,
+                "time": "17:30 - 19:00",
+                "name": "晚餐 - 客家風味餐",
+                "url": "",
+                "urlName": "通霄市區"
+            },
+            {
+                "day": 1,
+                "time": "19:30 - 22:00",
+                "name": "晚會 - 露天燒烤音樂派對",
+                "url": "",
+                "urlName": "苗栗通霄度假莊園"
+            },
+            {
+                "day": 1,
+                "time": "22:30",
+                "name": "休息",
+                "url": "",
+                "urlName": "苗栗通霄度假莊園"
+            },
+            {
+                "day": 2,
+                "time": "07:30 - 08:30",
+                "name": "早餐",
+                "url": "",
+                "urlName": "苗栗通霄度假莊園"
+            },
+            {
+                "day": 2,
+                "time": "09:00 - 10:30",
+                "name": "飛牛牧場親子活動",
+                "url": "https://goo.gl/maps/8K8wJjwZV9w",
+                "urlName": "Google Map"
+            },
+            {
+                "day": 2,
+                "time": "11:00 - 12:30",
+                "name": "白沙屯拱天宮參拜",
+                "url": "https://goo.gl/maps/MFqKcXnPrdJ2",
+                "urlName": "Google Map"
+            },
+            {
+                "day": 2,
+                "time": "12:30 - 14:00",
+                "name": "午餐 - 通霄老街小吃",
+                "url": "",
+                "urlName": "通霄老街"
+            },
+            {
+                "day": 2,
+                "time": "14:30 - 16:30",
+                "name": "龍貓隧道森林步道健行",
+                "url": "https://goo.gl/maps/7X2jGzA2cUB2",
+                "urlName": "Google Map"
+            },
+            {
+                "day": 2,
+                "time": "17:00 - 18:30",
+                "name": "晚餐 - 海鮮大餐",
+                "url": "",
+                "urlName": "通霄漁港"
+            }
+        ];
+
+
         window.onload = () => {
             setContent('currentDate', [''], 'date')
             setContent('accordionExample', accordionData, 'basic')
             setContent('titlesTD', titles, 'tableHead')
             setContent('infos', info, 'tableInfo')
+            setContent('schedule1', scheduleInfo.filter(i => i.day === 1), 'schedule')
+            setContent('schedule2', scheduleInfo.filter(i => i.day === 2), 'schedule')
         }
 
 
