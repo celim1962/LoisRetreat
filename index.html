@@ -11,7 +11,52 @@
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        html {
+            background-color: #44494c !important;
+            margin: 2%;
+        }
 
+        body {
+            background-color: #44494c!important;
+            color: rgba(255, 255, 255, 0.658);
+        }
+
+        .accordion-item {
+            background-color: #232627 !important;
+        }
+
+        .accordion-body{
+            color: rgba(255, 255, 255, 0.658);
+        }
+
+
+        .nav-link,
+        .nav-link active {
+            color: rgba(255, 255, 255, 0.658);
+
+        }
+
+        .accordion-button {
+            color:rgba(255, 255, 255, 0.658) !important;
+            background-color: #17191a !important;
+        }
+
+        .nav-link:hover{
+            color: white!important;
+            background-color: rgb(114, 111, 111)!important;
+        }
+
+        a{
+            color: #d7d7d7!important;
+        }
+
+        .modal{
+            background-color:rgba(255, 255, 255, 0.658) ;
+            color: black!important;
+        }
+        .modal-content{
+            background-color: #898989!important;
+        }
     </style>
 </head>
 
@@ -63,7 +108,7 @@
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    <table class="table table-striped mt-5" id="hotelInfoTable">
+                    <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
                             <tr id="titlesTD1"></tr>
                         </thead>
@@ -71,7 +116,7 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <table class="table table-striped mt-5" id="hotelInfoTable">
+                    <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
                             <tr id="titlesTD2"></tr>
                         </thead>
@@ -79,7 +124,7 @@
                     </table>
                 </div>
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                    <table class="table table-striped mt-5" id="hotelInfoTable">
+                    <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
                             <tr id="titlesTD3"></tr>
                         </thead>
@@ -89,7 +134,7 @@
             </div>
 
             <div id="modalDisplay">
-                
+
             </div>
 
 
@@ -128,8 +173,8 @@
                     <h4>第一天</h4>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped text-center">
-                        <thead class="table-primary">
+                    <table class="table table-bordered table-striped text-center table-dark">
+                        <thead class="thead-dark">
                             <tr>
                                 <th>時間</th>
                                 <th>活動名稱</th>
@@ -145,8 +190,8 @@
                     <h4>第二天</h4>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped text-center">
-                        <thead class="table-success">
+                    <table class="table table-bordered table-striped text-center table-dark">
+                        <thead class="thead-dark ">
                             <tr>
                                 <th>時間</th>
                                 <th>活動名稱</th>
@@ -202,16 +247,16 @@
                         <th scope="row">${index + 1}</th>
                         <td>${item.name}</td>
                         <td>${item.type}</td>
-                        <td>$ ${item.price}</td>
+                        <td>${item.price}</td>
                         <td>
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal${index}-${id}">
+                            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal${index}-${id}">
                                 備註
                             </button>    
                         </td>
                         <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
                         <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" style="color:green"></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:red"></i>'}</td>
                     </tr>`;
-                    modalDisplay.innerHTML+=`<div class="modal fade" id="exampleModal${index}-${id}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        modalDisplay.innerHTML += `<div class="modal fade" id="exampleModal${index}-${id}" tabindex="-1" aria-labelledby="exampleModalLabel"
                     aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -224,7 +269,7 @@
                                 ${item.note}
                             </div>
                             <div class="modal-body">
-                                <img src="${item.img}" width="90%"/>
+                                <img src="${item.img}" width="98%" style="border-radius:5px" />
                             </div>
                             
                         </div>
@@ -290,17 +335,17 @@
         ];
         const titles = ['#', '名稱', '房型', '價格', '備註', '加床', '加嬰兒床'];
         const info = [
-            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false,img:'./photo/first/2.jpg' },
-            { isShow: true, name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false,img:'./photo/first/4.jpg' },
-            { isShow: true, name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false,img:'./photo/first/6.jpg' },
-            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false,img:'./photo/first/8.jpg' },
-            { isShow: false, name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null,img:'./photo/second/2.jpg' },
-            { isShow: false, name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null,img:'./photo/second/4.jpg' },
-            { isShow: false, name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null,img:'./photo/second/8.jpg' },
-            { isShow: false, name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false,img:'./photo/other/movingCastle.jpg' },
-            { isShow: false, name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false,img:'./photo/other/closepalm.jpg' },
-            { isShow: false, name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false ,img:'./photo/other/start.jpg'},
-            { isShow: false, name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false,img:'./photo/other/startLight.jpg' },
+            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '3780', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false, img: './photo/first/2.jpg' },
+            { isShow: true, name: '藍鵲會館', type: '四人房', price: '4320', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>四人房部分房型為2張雙人床<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false, img: './photo/first/4.jpg' },
+            { isShow: true, name: '藍鵲會館', type: '六人房', price: '5940', note: '住宿含入園劵6張、隔天早餐6客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false, img: './photo/first/6.jpg' },
+            { isShow: true, name: '藍鵲會館', type: '雙人房', price: '7200', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>最多可加一床(乳膠床墊)500元<br>若加一床皆無法再加嬰兒床，需自行評估', addBedOk: true, addInfantBedOk: false, img: './photo/first/8.jpg' },
+            { isShow: false, name: '檜意村小木屋', type: '雙人房', price: '3840', note: '住宿含入園劵2張、隔天早餐2客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null, img: './photo/second/2.jpg' },
+            { isShow: false, name: '檜意村小木屋', type: '四人房', price: '4640', note: '住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null, img: './photo/second/4.jpg' },
+            { isShow: false, name: '檜意村小木屋', type: '八人房', price: '7920', note: '住宿含入園劵8張、隔天早餐8客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: null, addInfantBedOk: null, img: './photo/second/8.jpg' },
+            { isShow: false, name: '移動城堡-露營車', type: '2大2小', price: '4640', note: '適合2大2小，1雙人床(寬126cm，適合1大1小)<br>或是1上下舖(適合1大1小，上舖限重 40kg內)<br>每台露營車都有木棧平台，亦有獨立衛浴及小客廳<br>衛浴請使用露營車旁附加客廳、獨立衛浴<br>住宿含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false, img: './photo/other/movingCastle.jpg' },
+            { isShow: false, name: '合掌村', type: '雙人房', price: '3780', note: '合掌村主要房型為雙人房，四人房為房內加兩張單人乳膠床墊<br>僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: false, addInfantBedOk: false, img: './photo/other/closepalm.jpg' },
+            { isShow: false, name: '星空城堡-露營車', type: '四人房', price: '6120', note: '可入住4位， 住宿費用包含入園劵4張、隔天早餐4客、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）<br>提供一張標準雙人床及單人床上下舖<br>', addBedOk: true, addInfantBedOk: false, img: './photo/other/start.jpg' },
+            { isShow: false, name: '星光村', type: '雙人房', price: '4320', note: ' 星光村主要房型為雙人房，四人房會在房內加兩張單人乳膠床墊，僅提供 2 - 4 人入住，不提供額外加床服務<br>住宿含入園劵、隔天早餐券、洗髮精、沐浴乳、浴巾、吹風機、電水壺、冰箱（僅供冷藏）', addBedOk: true, addInfantBedOk: false, img: './photo/other/startLight.jpg' },
         ];
 
 
