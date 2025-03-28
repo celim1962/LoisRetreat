@@ -77,15 +77,6 @@ const setContent = (id, contentArray, contentType) => {
     })
 }
 
-
-
-
-const titles = ['#', '名稱', '房型', '價格', '備註', '加床', '加嬰兒床'];
-
-
-
-
-
 const changeMode = (status) => {
     let obj = document.styleSheets[2]
     let temp = ['table-dark', 'thead-dark']
@@ -131,8 +122,10 @@ const getData = async (name) => {
 
 window.onload = async () => {
     const accordionData = await getData('basicInfo');
+    const titles = await getData('roomInfoTitle');
     const info = await getData('roomInfo');
     const scheduleInfo = await getData('scheduleData');
+
 
     setContent('currentDate', [''], 'date');
     setContent('accordionExample', accordionData, 'basic');
