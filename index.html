@@ -22,11 +22,11 @@
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">住宿基本資訊</button>
+                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">園區資訊</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">房型</button>
+                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">房型說明</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
@@ -39,27 +39,39 @@
 
     </ul>
     <div class="tab-content" id="myTabContent">
+
+        <!-- 園區資訊 -->
         <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
             tabindex="0">
             <div class="accordion" id="accordionExample"></div>
         </div>
+
+        <!-- 房型說明 -->
         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
 
             <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px;">
+
+                <!-- 藍鵲會館 -->
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
                         type="button" role="tab" aria-controls="home" aria-selected="true">藍鵲會館</button>
                 </li>
+
+                <!-- 檜意村小木屋 -->
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
                         type="button" role="tab" aria-controls="profile" aria-selected="false">檜意村小木屋</button>
                 </li>
+
+                <!-- 其他 -->
                 <li class="nav-item" role="presentation">
                     <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
                         type="button" role="tab" aria-controls="contact" aria-selected="false">其他</button>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
+
+                <!-- 藍鵲會館 -->
                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
@@ -68,6 +80,8 @@
                         <tbody id="infos1"></tbody>
                     </table>
                 </div>
+
+                <!-- 檜意村小木屋 -->
                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                     <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
@@ -76,6 +90,8 @@
                         <tbody id="infos2"></tbody>
                     </table>
                 </div>
+
+                <!-- 其他 -->
                 <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                     <table class="table table-striped mt-5 table-dark" id="hotelInfoTable">
                         <thead>
@@ -86,12 +102,14 @@
                 </div>
             </div>
 
+            <!-- 顯示房型備註資訊 -->
             <div id="modalDisplay">
-
             </div>
 
 
         </div>
+
+        <!-- 參加人員 -->
         <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
             <div class="container mt-5">
                 <h3 class="text-center">參加人員名單</h3>
@@ -115,6 +133,8 @@
                 </div>
             </div>
         </div>
+
+        <!-- 預設行程 -->
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
             <div class="container mt-5">
                 <h2 class="text-center mb-4">苗栗通霄兩天一夜旅遊行程表</h2>
