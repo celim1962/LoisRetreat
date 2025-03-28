@@ -1,0 +1,47 @@
+html {
+    background-color: #44494c !important;
+    margin: 1%;
+}
+
+body {
+    background-color: #44494c !important;
+    color: rgba(255, 255, 255, 0.658);
+}
+
+.accordion-item {
+    background-color: #232627 !important;
+}
+
+.accordion-body {
+    color: rgba(255, 255, 255, 0.658);
+}
+
+
+.nav-link,
+.nav-link active {
+    color: rgba(255, 255, 255, 0.658);
+
+}
+
+.accordion-button {
+    color: rgba(255, 255, 255, 0.658) !important;
+    background-color: #17191a !important;
+}
+
+.nav-link:hover {
+    color: white !important;
+    background-color: rgb(114, 111, 111) !important;
+}
+
+a {
+    color: #d7d7d7 !important;
+}
+
+.modal {
+    background-color: rgba(255, 255, 255, 0.658);
+    color: black !important;
+}
+
+.modal-content {
+    background-color: #898989 !important;
+}
