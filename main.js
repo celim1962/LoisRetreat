@@ -216,6 +216,28 @@ const scheduleInfo = [
     }
 ];
 
+const prints = () => {
+    let obj = document.styleSheets[2]
+    obj.disabled = true;
+
+    let temp = ['table-dark', 'thead-dark']
+    temp.map(t => {
+        document.querySelectorAll('.' + t).forEach(function (el) {
+            el.classList.replace(t, t + 'aa')
+        });
+    })
+
+    window.print();
+
+    obj.disabled = false;
+    temp.map(t => {
+        document.querySelectorAll('.' + t + 'aa').forEach(function (el) {
+            el.classList.replace(t + 'aa', t)
+        });
+    })
+
+}
+
 
 window.onload = () => {
     setContent('currentDate', [''], 'date')
