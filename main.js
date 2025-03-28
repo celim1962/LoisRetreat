@@ -55,7 +55,7 @@ const setContent = (id, contentArray, contentType) => {
                         ${item.note}
                     </div>
                     <div class="modal-body">
-                       <a href="${item.img}"> <img src="${item.img}" width="98%" style="border-radius:5px" /></a>
+                       <a target="_blank" href="${item.img}"> <img src="${item.img}" width="98%" style="border-radius:5px" /></a>
                     </div>
                     
                 </div>
@@ -96,7 +96,7 @@ const accordionData = [
 ‧出「通霄火車站」後前行至 (和平路) 路口(站牌在通霄郵局旁邊)，搭乘苗栗客運往「福興站或大坑尾站」方向於「南和派出所」下車，即可抵達藍鵲渡假莊園。
 3.出「通霄火車站」後搭乘計程車, 約15分鐘可抵達藍鵲渡假莊園, 車資約250-350元。`
     },
-    { key: '園區地圖', value: '<a href="./hotelMap.jpg"><img src="./hotelMap.jpg" style="width: 70%; height: auto;" alt=""></a>' },
+    { key: '園區地圖', value: '<a target="_blank" href="./hotelMap.jpg"><img src="./hotelMap.jpg" style="width: 70%; height: auto;" alt=""></a>' },
     { key: '訂房須知', value: '⚠線上預訂須事先全額匯款完成，無法使用數位五倍券、國旅券、好食券付款，請知悉<br><br>⚠請事先閱讀相關購買須知、注意事項、取消政策，預定等同於同意園區相關規定<br><br>提醒您：每筆交易的交易限額上限將調整為5萬元，<br>超過5萬元之交易，將無法於藍新付款頁面選擇Web ATM與ATM轉帳之付款方式，訂單將無法成立。請分開下訂<br><br>⚠園區僅提供匯款轉帳，暫不支援虛擬ATM使用無卡/無摺的匯款方式<br><br>訂房網址:<a href="https://bluemagpieresort.rezio.shop/zh-TW/product/Bbookingroom" target="_blank" >預定住宿</a>' },
     {
         key: '訂房取消規則', value: `
