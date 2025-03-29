@@ -23,9 +23,18 @@ body {
     color: #1d1d1f;
 }
 
+.nav{
+    border-bottom: 1px solid black;
+}
+
 .nav-link,
 .nav-link.active {
     color: #1d1d1f;
+}
+
+.nav-link.active{
+    color: white!important;
+    background-color: #7a7a7a!important;
 }
 
 .accordion-button {
@@ -40,8 +49,8 @@ body {
 
 .nav-link:hover {
     /* color: #0071e3; */
-    color: black;
-    background-color: #d2d2d7;
+    color: white;
+    background-color: #606063;
 }
 
 a {
@@ -77,8 +86,12 @@ a {
     color: #f5f5f7;
 }
 
-.nav-link.active {
-    color: black !important;
+.dark-mode .nav{
+    border-bottom: 1px solid white;
+}
+
+.dark-mode .nav-link.active {
+    color: white !important;
 }
 
 .dark-mode .accordion-button {
