@@ -2,12 +2,12 @@
 
 html {
     background-color: #858585;
-    /* margin: .5%; */
+    margin: 5px;
 }
 
 body {
     border-radius: 15px;
-    padding: 10px;
+    padding: 7px;
     min-height: 80vh;
     background-color: #dbdbdb;
     color: #1d1d1f;
@@ -23,7 +23,7 @@ body {
     color: #1d1d1f;
 }
 
-.nav{
+.nav {
     border-bottom: 1px solid black;
 }
 
@@ -32,9 +32,9 @@ body {
     color: #1d1d1f;
 }
 
-.nav-link.active{
-    color: white!important;
-    background-color: #7a7a7a!important;
+.nav-link.active {
+    color: white !important;
+    background-color: #7a7a7a !important;
 }
 
 .accordion-button {
@@ -68,9 +68,27 @@ a {
 }
 
 /* Dark Mode */
+
+
 .dark-mode {
     background-color: #222222;
     color: #f5f5f7;
+}
+
+.dark-mode html {
+    html {
+        background-color: #858585;
+        margin: 5px;
+    }
+}
+
+.dark-mode body {
+    border-radius: 15px;
+    padding: 7px;
+    min-height: 80vh;
+    background-color: #dbdbdb;
+    color: #1d1d1f;
+    transition: background 0.3s, color 0.3s;
 }
 
 .dark-mode .accordion-item {
@@ -86,7 +104,7 @@ a {
     color: #f5f5f7;
 }
 
-.dark-mode .nav{
+.dark-mode .nav {
     border-bottom: 1px solid white;
 }
 
