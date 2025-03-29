@@ -1,50 +1,116 @@
+/* Updated Apple-inspired CSS with Toggleable Dark Mode */
+
 html {
-    background-color: #44494c !important;
-    margin: 1%;
+    background-color: #f5f5f7;
+    margin: .5%;
 }
 
 body {
     border-radius: 15px;
-    padding:10px;
+    padding: 10px;
     min-height: 80vh;
-    background-color: #44494c !important;
-    color: rgba(255, 255, 255, 0.658);
+    background-color: #ffffff;
+    color: #1d1d1f;
+    transition: background 0.3s, color 0.3s;
 }
 
+
 .accordion-item {
-    background-color: #232627 !important;
+    background-color: #f5f5f7;
 }
 
 .accordion-body {
-    color: rgba(255, 255, 255, 0.658);
+    color: #1d1d1f;
 }
 
-
 .nav-link,
-.nav-link active {
-    color: rgba(255, 255, 255, 0.658);
-
+.nav-link.active {
+    color: #1d1d1f;
 }
 
 .accordion-button {
-    color: rgba(255, 255, 255, 0.658) !important;
-    background-color: #17191a !important;
+    color: #1d1d1f;
+    background-color: #e8e8ed;
+}
+
+.accordion-button::after {
+    /* background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e"); */
+    background-image: url("https://img.icons8.com/?size=100&id=40021&format=png&color=FFFFFF");
 }
 
 .nav-link:hover {
-    color: white !important;
-    background-color: rgb(114, 111, 111) !important;
+    /* color: #0071e3; */
+    color: black;
+    background-color: #d2d2d7;
 }
 
 a {
-    color: #d7d7d7 !important;
+    color: #0071e3;
+    /* color: black; */
 }
 
 .modal {
-    background-color: rgba(255, 255, 255, 0.658);
-    color: black !important;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #1d1d1f;
 }
 
 .modal-content {
-    background-color: #898989 !important;
+    background-color: #ffffff;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #1d1d1f;
+    color: #f5f5f7;
+}
+
+.dark-mode .accordion-item {
+    background-color: #2c2c2e;
+}
+
+.dark-mode .accordion-body {
+    color: #f5f5f7;
+}
+
+.dark-mode .nav-link,
+.dark-mode .nav-link.active {
+    color: #f5f5f7;
+}
+
+.nav-link.active {
+    color: black !important;
+}
+
+.dark-mode .accordion-button {
+    color: #f5f5f7;
+    background-color: #3a3a3c;
+}
+
+.dark-mode .accordion-button::after {
+    background-image: url("https://img.icons8.com/?size=100&id=40021&format=png&color=FFFFFF");
+}
+
+
+
+.dark-mode .nav-link:hover {
+    /* color: #2997ff; */
+    background-color: #4a4a4c;
+}
+
+.dark-mode a {
+    color: #2997ff;
+}
+
+.dark-mode .modal {
+    background-color: rgba(28, 28, 30, 0.9);
+    color: #f5f5f7;
+}
+
+.dark-mode .modal-content {
+    background-color: #3a3a3c;
+}
+
+/* Ensure h2 is white in dark mode */
+.dark-mode h2 {
+    color: #ffffff;
 }

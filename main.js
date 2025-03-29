@@ -69,7 +69,7 @@ const setContent = (id, contentArray, contentType) => {
                         <td>${item.url === '' ? '' : `<a target="_blank" href="${item.url}">${item.urlName}</a>`}</td>
                     </tr>`
                 break;
-           
+
             default:
                 break;
         }
@@ -82,6 +82,9 @@ const changeMode = (status) => {
     let obj = document.styleSheets[2]
     let temp = ['table-dark', 'thead-dark']
 
+    let toggleBtn = document.getElementById('theme-toggle')
+    let toggleItem = document.getElementById('toggleItem')
+
     switch (status) {
         case 'light':
             temp.map(t => {
@@ -90,6 +93,8 @@ const changeMode = (status) => {
                 });
             })
             obj.disabled = true;
+            toggleBtn.classList.replace('btn-light', 'btn-dark')
+            toggleItem.classList.replace('fa-sun','fa-moon')
             break;
         case 'dark':
             temp.map(t => {
@@ -98,6 +103,8 @@ const changeMode = (status) => {
                 });
             })
             obj.disabled = false;
+            toggleBtn.classList.replace('btn-dark', 'btn-light')
+            toggleItem.classList.replace('fa-moon','fa-sun')
             break;
     }
 }
@@ -120,6 +127,29 @@ const getData = async (name) => {
     return res[`${name}`]
 }
 
+const addToggle = () => {
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        // localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        if (document.body.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark')
+            changeMode('dark')
+        } else {
+            localStorage.setItem('theme', 'light')
+            changeMode('light')
+        }
+    });
+
+    // changeMode('light')
+
+    // 檢查使用者上次選擇的模式
+    if (localStorage.getItem('theme') === 'dark') {
+        // changeMode('dark')
+        document.body.classList.add('dark-mode');
+    }
+}
+
 
 window.onload = async () => {
     const accordionData = await getData('basicInfo');
@@ -140,6 +170,8 @@ window.onload = async () => {
 
     setContent('schedule1', scheduleInfo.filter(i => i.day === 1), 'schedule');
     setContent('schedule2', scheduleInfo.filter(i => i.day === 2), 'schedule');
+
+    addToggle();
 
 }
 

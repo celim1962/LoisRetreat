@@ -19,12 +19,20 @@
             <h1 class="display-4">2025羅以退修會</h1>
             <div style="display: flex;align-items: center;justify-content: space-between;max-width: 90%;">
                 <h5 id="currentDate"></h5>
-                <div>
+                <div style="display: none;">
                     <button id="lightModeBtn" class="btn btn-light btn-sm" style="margin-right: 15px;"
                         onclick="changeMode('light')"><i class="fa-solid fa-sun"></i></button>
                     <button id="darkModeBtn" class="btn btn-dark btn-sm" onclick="changeMode('dark')"><i
                             class="fa-solid fa-moon"></i></button>
                 </div>
+                <header>
+                    <nav>
+                        <!-- <button id="theme-toggle" class="fa-solid fa-sun">切換模式</button> -->
+                        <button id="theme-toggle" class="btn btn-dark btn-sm" style="margin-right: 15px;"><i id="toggleItem"
+                                class="fa-solid fa-moon"></i></button>
+                                
+                    </nav>
+                </header>
             </div>
 
         </div>
