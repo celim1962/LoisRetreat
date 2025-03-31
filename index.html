@@ -34,25 +34,26 @@
 
 
 
-    <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 15px;">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
-                type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">園區資訊</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
-                type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">房型說明</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
-                type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">開會資訊</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">預設行程</button>
-        </li>
-
-    </ul>
+    <div style="overflow-x: auto; white-space: nowrap;">
+        <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 15px; display: inline-block;">
+            <li class="nav-item" role="presentation" style="display: inline-block;">
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+                    type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">園區資訊</button>
+            </li>
+            <li class="nav-item" role="presentation" style="display: inline-block;">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+                    type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">房型說明</button>
+            </li>
+            <li class="nav-item" role="presentation" style="display: inline-block;">
+                <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
+                    type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">開會資訊</button>
+            </li>
+            <li class="nav-item" role="presentation" style="display: inline-block;">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">預設行程</button>
+            </li>
+        </ul>
+    </div>
     <div class="tab-content" id="myTabContent">
 
         <!-- 園區資訊 -->
@@ -63,27 +64,28 @@
 
         <!-- 房型說明 -->
         <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <div style="overflow-x: auto; white-space: nowrap; margin:15px 10px;">
+                <ul class="nav nav-tabs" id="myTab" role="tablist" style="display: inline-block;">
 
-            <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px;">
+                    <!-- 藍鵲會館 -->
+                    <li class="nav-item" role="presentation" style="display: inline-block;">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
+                            type="button" role="tab" aria-controls="home" aria-selected="true">藍鵲會館</button>
+                    </li>
 
-                <!-- 藍鵲會館 -->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home"
-                        type="button" role="tab" aria-controls="home" aria-selected="true">藍鵲會館</button>
-                </li>
+                    <!-- 檜意村小木屋 -->
+                    <li class="nav-item" role="presentation" style="display: inline-block;">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
+                            type="button" role="tab" aria-controls="profile" aria-selected="false">檜意村小木屋</button>
+                    </li>
 
-                <!-- 檜意村小木屋 -->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile"
-                        type="button" role="tab" aria-controls="profile" aria-selected="false">檜意村小木屋</button>
-                </li>
-
-                <!-- 其他 -->
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
-                        type="button" role="tab" aria-controls="contact" aria-selected="false">其他</button>
-                </li>
-            </ul>
+                    <!-- 其他 -->
+                    <li class="nav-item" role="presentation" style="display: inline-block;">
+                        <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact"
+                            type="button" role="tab" aria-controls="contact" aria-selected="false">其他</button>
+                    </li>
+                </ul>
+            </div>
             <div class="tab-content" id="myTabContent">
 
                 <!-- 藍鵲會館 -->
@@ -126,16 +128,16 @@
 
         <!-- 開會資訊 -->
         <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
-            <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px;">
+            <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px; white-space: nowrap; overflow-x: auto;">
 
                 <!-- 人員清單 -->
-                <li class="nav-item" role="presentation">
+                <li class="nav-item" role="presentation" style="display: inline-block;">
                     <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people" type="button"
                         role="tab" aria-controls="people" aria-selected="true">人員清單</button>
                 </li>
 
                 <!-- 會議資訊 -->
-                <li class="nav-item" role="presentation">
+                <li class="nav-item" role="presentation" style="display: inline-block;">
                     <button class="nav-link active" id="meetingInfo-tab" data-bs-toggle="tab"
                         data-bs-target="#meetingInfo" type="button" role="tab" aria-controls="meetingInfo"
                         aria-selected="false">會議資訊</button>
