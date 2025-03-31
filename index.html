@@ -22,9 +22,9 @@
                 <header>
                     <nav>
                         <!-- <button id="theme-toggle" class="fa-solid fa-sun">切換模式</button> -->
-                        <button id="theme-toggle" class="btn btn-dark btn-sm" style="margin-right: 15px;"><i id="toggleItem"
-                                class="fa-solid fa-moon"></i></button>
-                                
+                        <button id="theme-toggle" class="btn btn-dark btn-sm" style="margin-right: 15px;"><i
+                                id="toggleItem" class="fa-solid fa-moon"></i></button>
+
                     </nav>
                 </header>
             </div>
@@ -45,7 +45,7 @@
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
-                type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">參加人員</button>
+                type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">開會資訊</button>
         </li>
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
@@ -124,29 +124,61 @@
 
         </div>
 
-        <!-- 參加人員 -->
+        <!-- 開會資訊 -->
         <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
-            <div class="container mt-5">
-                <h3 class="text-center">參加人員名單</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>保留中 (1人):</h5>
-                        <ul>
-                            <li>俞安</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>已確定 (11人):</h5>
-                        <ul>
-                            <li>瀚元哥、以琳姊、愷晞</li>
-                            <li>宗憲、以琳、恩樂</li>
-                            <li>佳蓮、約賜</li>
-                            <li>mimi、周敬</li>
-                            <li>弘奕</li>
-                        </ul>
+            <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px;">
+
+                <!-- 人員清單 -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="people-tab" data-bs-toggle="tab" data-bs-target="#people"
+                        type="button" role="tab" aria-controls="people" aria-selected="true">人員清單</button>
+                </li>
+
+                <!-- 會議資訊 -->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="meetingInfo-tab" data-bs-toggle="tab" data-bs-target="#meetingInfo"
+                        type="button" role="tab" aria-controls="meetingInfo" aria-selected="false">會議資訊</button>
+                </li>
+            </ul>
+            <div class="tab-content" >
+
+                <!-- 人員清單 -->
+                <div class="tab-pane fade show active" id="people" role="tabpanel" aria-labelledby="people-tab">
+                    <div class="container mt-5">
+                        <h3 class="text-center">參加人員名單</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>保留中 (1人):</h5>
+                                <ul>
+                                    <li>俞安</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>已確定 (11人):</h5>
+                                <ul>
+                                    <li>瀚元哥、以琳姊、愷晞</li>
+                                    <li>宗憲、以琳、恩樂</li>
+                                    <li>佳蓮、約賜</li>
+                                    <li>mimi、周敬</li>
+                                    <li>弘奕</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- 會議資訊 -->
+                <div class="tab-pane fade" id="meetingInfo" role="tabpanel" aria-labelledby="meetingInfo-tab">
+                    <div style="display: flex;justify-content: space-evenly;">
+                        <a target="_blank" href="https://docs.google.com/spreadsheets/d/1nD1f8wzSJIOQbX8dmT8p3WK_d2drFKcwsKXmyq5Z-nQ/edit?gid=1946326843#gid=1946326843">羅以行事曆</a>
+                        <a target="_blank" href="https://line.me/ti/g/CJHGEtnjFJ">核心同工聊天室</a>
+                    </div>
+
+                </div>
+
+                
             </div>
+
         </div>
 
         <!-- 預設行程 -->
