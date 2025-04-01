@@ -92,7 +92,7 @@ const changeMode = (status) => {
                     el.classList.replace(t, t + 'aa')
                 });
             })
-            obj.disabled = true;
+            // obj.disabled = true;
             toggleBtn.classList.replace('btn-light', 'btn-dark')
             toggleItem.classList.replace('fa-sun','fa-moon')
             break;
@@ -102,23 +102,11 @@ const changeMode = (status) => {
                     el.classList.replace(t + 'aa', t)
                 });
             })
-            obj.disabled = false;
+            // obj.disabled = false;
             toggleBtn.classList.replace('btn-dark', 'btn-light')
             toggleItem.classList.replace('fa-moon','fa-sun')
             break;
     }
-}
-
-const prints = () => {
-    let obj = document.styleSheets[2]
-    obj.disabled = true;
-
-    changeMode('light')
-
-    window.print();
-
-    changeMode('dark')
-
 }
 
 const getData = async (name) => {
