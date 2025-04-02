@@ -39,8 +39,8 @@ const setContent = (id, contentArray, contentType) => {
                         備註
                     </button>    
                 </td>
-                <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" style="color:white"></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:white"></i>'}</td>
-                <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" style="color:white"></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" style="color:white"></i>'}</td>
+                <td>${item.addBedOk === true ? '<i class="fa-regular fa-circle" ></i>' : item.addBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" ></i>'}</td>
+                <td>${item.addInfantBedOk === true ? '<i class="fa-regular fa-circle" ></i>' : item.addInfantBedOk === null ? '<i class="fa-solid fa-question"></i>' : '<i class="fa-solid fa-xmark" ></i>'}</td>
             </tr>`;
                 modalDisplay.innerHTML += `<div class="modal fade" id="exampleModal${index}-${id}" tabindex="-1" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
