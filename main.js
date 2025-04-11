@@ -141,21 +141,10 @@ const addToggle = () => {
 
 window.onload = async () => {
     const accordionData = await getData('basicInfo');
-    const titles = await getData('roomInfoTitle');
-    const info = await getData('roomInfo');
     const scheduleInfo = await getData('scheduleData');
-
 
     setContent('currentDate', [''], 'date');
     setContent('accordionExample', accordionData, 'basic');
-
-    setContent('titlesTD1', titles, 'tableHead');
-    setContent('titlesTD2', titles, 'tableHead');
-    setContent('titlesTD3', titles, 'tableHead');
-    setContent('infos1', info.filter(i => i.name === '藍鵲會館'), 'tableInfo');
-    setContent('infos2', info.filter(i => i.name === '檜意村小木屋'), 'tableInfo');
-    setContent('infos3', info.filter(i => i.name !== '檜意村小木屋' && i.name !== '藍鵲會館'), 'tableInfo');
-
     setContent('schedule1', scheduleInfo.filter(i => i.day === 1), 'schedule');
     setContent('schedule2', scheduleInfo.filter(i => i.day === 2), 'schedule');
 
