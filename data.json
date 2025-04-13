@@ -2,11 +2,11 @@
     "basicInfo": [
         {
             "key": "民宿基本資訊",
-            "value": "名稱：CTWOBlue MG<br>地址：<a target=\"_blank\" href=\"https://www.google.com/maps/place/CTWOBlue+MG/data=!4m2!3m1!1s0x0:0xf093be12d94e2550?sa=X&ved=1t:2428&ictx=111\">苗栗縣苑裡鎮1號</a>"
+            "value": "名稱：慈夢柔溫泉會館<br>地址：<a target=\"_blank\" href=\"https://www.google.com.tw/maps/place/%E8%8B%97%E6%A0%97%E6%85%88%E5%A4%A2%E6%9F%94%E6%B8%A1%E5%81%87%E6%9C%83%E9%A4%A8-%E5%A4%A7%E6%B9%96%E4%BA%BA%E6%B0%A3%E4%BD%8F%E5%AE%BF%7C%E8%8B%97%E6%A0%97%E6%B3%B3%E6%B1%A0%E6%B0%91%E5%AE%BF%7C%E7%86%B1%E9%96%80%E6%B0%91%E5%AE%BF%7C%E5%BF%85%E5%8E%BB%E6%B0%91%E5%AE%BF%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E4%BD%8F%E5%AE%BF%E9%A6%96%E9%81%B8%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E8%A6%AA%E5%AD%90%E6%B0%91%E5%AE%BF/@24.4277877,120.866111,17z/data=!4m9!3m8!1s0x346900488427e2c7:0xa79eb6daec72cd11!5m2!4m1!1i2!8m2!3d24.4277828!4d120.8686859!16s%2Fg%2F12hlbnkg6?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D\">364苗栗縣大湖鄉八寮灣1-10號</a>"
         },
         {
             "key": "重要事項",
-            "value": "入住時間: 15:00-18:00<br>退房時間: 08:00-11:00<br>門禁時間: 22:00-07:00<br>21:00之後須放低音量<br>僅能使用現金支付<br>無法提供加床"
+            "value": "入住時間: 15:00之後<br>退房時間 10:30-11:00<br>早餐需自行加購(美而美)<br>"
         }
     ],
 
@@ -15,8 +15,8 @@
             "day": 1,
             "time": "14:00 - 15:30",
             "name": "集合與入住",
-            "url": "https://www.google.com/maps/place/CTWOBlue+MG/@24.3810832,120.7160042,17z/data=!3m1!4b1!4m9!3m8!1s0x346905002b1ab69f:0xf093be12d94e2550!5m2!4m1!1i2!8m2!3d24.3810832!4d120.7160042!16s%2Fg%2F11x2yzq31w?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
-            "urlName": "CTWOBlue MG"
+            "url": "https://www.google.com.tw/maps/place/%E8%8B%97%E6%A0%97%E6%85%88%E5%A4%A2%E6%9F%94%E6%B8%A1%E5%81%87%E6%9C%83%E9%A4%A8-%E5%A4%A7%E6%B9%96%E4%BA%BA%E6%B0%A3%E4%BD%8F%E5%AE%BF%7C%E8%8B%97%E6%A0%97%E6%B3%B3%E6%B1%A0%E6%B0%91%E5%AE%BF%7C%E7%86%B1%E9%96%80%E6%B0%91%E5%AE%BF%7C%E5%BF%85%E5%8E%BB%E6%B0%91%E5%AE%BF%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E4%BD%8F%E5%AE%BF%E9%A6%96%E9%81%B8%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E8%A6%AA%E5%AD%90%E6%B0%91%E5%AE%BF/@24.4277877,120.866111,17z/data=!4m9!3m8!1s0x346900488427e2c7:0xa79eb6daec72cd11!5m2!4m1!1i2!8m2!3d24.4277828!4d120.8686859!16s%2Fg%2F12hlbnkg6?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+            "urlName": "苗栗慈夢柔渡假會館"
         },
         {
             "day": 1,
@@ -36,8 +36,8 @@
             "day": 1,
             "time": "19:30 - 22:00",
             "name": "羅以晚會",
-            "url": "https://www.google.com/maps/place/CTWOBlue+MG/@24.3810832,120.7160042,17z/data=!3m1!4b1!4m9!3m8!1s0x346905002b1ab69f:0xf093be12d94e2550!5m2!4m1!1i2!8m2!3d24.3810832!4d120.7160042!16s%2Fg%2F11x2yzq31w?entry=ttu&g_ep=EgoyMDI1MDQwOC4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
-            "urlName": "CTWOBlue MG"
+            "url": "https://www.google.com.tw/maps/place/%E8%8B%97%E6%A0%97%E6%85%88%E5%A4%A2%E6%9F%94%E6%B8%A1%E5%81%87%E6%9C%83%E9%A4%A8-%E5%A4%A7%E6%B9%96%E4%BA%BA%E6%B0%A3%E4%BD%8F%E5%AE%BF%7C%E8%8B%97%E6%A0%97%E6%B3%B3%E6%B1%A0%E6%B0%91%E5%AE%BF%7C%E7%86%B1%E9%96%80%E6%B0%91%E5%AE%BF%7C%E5%BF%85%E5%8E%BB%E6%B0%91%E5%AE%BF%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E4%BD%8F%E5%AE%BF%E9%A6%96%E9%81%B8%7C%E5%8C%85%E6%A3%9F%E6%B0%91%E5%AE%BF%7C%E8%A6%AA%E5%AD%90%E6%B0%91%E5%AE%BF/@24.4277877,120.866111,17z/data=!4m9!3m8!1s0x346900488427e2c7:0xa79eb6daec72cd11!5m2!4m1!1i2!8m2!3d24.4277828!4d120.8686859!16s%2Fg%2F12hlbnkg6?entry=ttu&g_ep=EgoyMDI1MDQwOS4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D",
+            "urlName": "苗栗慈夢柔渡假會館"
         },
         {
             "day": 1,
