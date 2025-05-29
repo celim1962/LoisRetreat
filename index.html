@@ -12,7 +12,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
 </head>
- 
+
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
@@ -42,11 +42,11 @@
             </li>
             <li class="nav-item" role="presentation" style="display: inline-block;">
                 <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people-tab-pane"
-                    type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">開會資訊</button>
+                    type="button" role="tab" aria-controls="people-tab-pane" aria-selected="false">精心時刻</button>
             </li>
             <li class="nav-item" role="presentation" style="display: inline-block;">
                 <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane"
-                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">預設行程</button>
+                    type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">行程</button>
             </li>
         </ul>
     </div>
@@ -60,53 +60,53 @@
 
 
 
-        <!-- 開會資訊 -->
+        <!-- 精心時刻 -->
         <div class="tab-pane fade" id="people-tab-pane" role="tabpanel" aria-labelledby="people-tab" tabindex="0">
-            <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin:15px 10px; white-space: nowrap; overflow-x: auto;">
+            <ul class="nav nav-tabs" id="myTab" role="tablist"
+                style="margin:15px 10px; white-space: nowrap; overflow-x: auto;">
 
                 <!-- 人員清單 -->
                 <li class="nav-item" role="presentation" style="display: inline-block;">
-                    <button class="nav-link" id="people-tab" data-bs-toggle="tab" data-bs-target="#people" type="button"
-                        role="tab" aria-controls="people" aria-selected="true">人員清單</button>
+                    <button class="nav-link active" id="people-tab" data-bs-toggle="tab" data-bs-target="#people"
+                        type="button" role="tab" aria-controls="people" aria-selected="true">精心時刻</button>
                 </li>
 
                 <!-- 會議資訊 -->
                 <li class="nav-item" role="presentation" style="display: inline-block;">
-                    <button class="nav-link active" id="meetingInfo-tab" data-bs-toggle="tab"
-                        data-bs-target="#meetingInfo" type="button" role="tab" aria-controls="meetingInfo"
-                        aria-selected="false">會議資訊</button>
+                    <button class="nav-link" id="meetingInfo-tab" data-bs-toggle="tab" data-bs-target="#meetingInfo"
+                        type="button" role="tab" aria-controls="meetingInfo" aria-selected="false">會議資訊</button>
                 </li>
             </ul>
             <div class="tab-content">
 
                 <!-- 人員清單 -->
-                <div class="tab-pane fade" id="people" role="tabpanel" aria-labelledby="people-tab">
-                    <div class="container mt-5">
-                        <h3 class="text-center">參加人員名單</h3>
+                <div class="tab-pane fade show active" id="people" role="tabpanel" aria-labelledby="people-tab">
+                    <div class="container mt-5 d-flex">
                         <div class="row">
-                            <div class="col-md-6">
-                                <h5>保留中 (1人):</h5>
-                                <ul>
-                                    <li>俞安</li>
-                                </ul>
-                            </div>
-                            <div class="col-md-6">
-                                <h5>已確定 (11人):</h5>
-                                <ul>
-                                    <li>瀚元哥、以琳姊、愷晞</li>
-                                    <li>宗憲、以琳、恩樂</li>
-                                    <li>佳蓮、約賜</li>
-                                    <li>mimi、周敬</li>
-                                    <li>弘奕</li>
-                                </ul>
-                            </div>
+                            <h3>5/30晚上(19:15~22:15)</h3>
+                            1.詩歌敬拜讚美(5分)<br><br>
+                            2.小組今年的改變、成長(10分)<br><br>
+                            3.彼此感恩、發現彼此的改變(30分)<br><br>
+                            4.給小組、給彼此的建議、鼓勵(30分)<br><br>
+                            5.小組長的話:(10分)<br><br>
+                            下半年的目標-穩定聚會的組員參與幸福小
+                            組服事<br><br>
+                            6.牧者的話(瀚元哥、俞安)<br>
+                        </div>
+                        <div class="row">
+                            <h3>5/31早上(9:30-10:30)</h3>
+                            1.敬拜讚美<br><br>
+                            2.說說在小組的你自己(定位、做的事、感受)<br><br>
+                            3.承上題,我們能(需要)為你做什麼<br><br>
+                            你覺得目前核心間的聚集、和牧者的聚集足夠<br><br>
+                            成為你的支持和陪伴嗎<br><br>
+                            4.下半年幸福小組新想法<br><br>
                         </div>
                     </div>
                 </div>
 
                 <!-- 會議資訊 -->
-                <div class="tab-pane fade show active" id="meetingInfo" role="tabpanel"
-                    aria-labelledby="meetingInfo-tab">
+                <div class="tab-pane fade" id="meetingInfo" role="tabpanel" aria-labelledby="meetingInfo-tab">
                     <div style="display: flex;justify-content: space-evenly;">
                         <a target="_blank" href="https://www.youtube.com/watch?v=OD7Pvwz4cjY">恩樂睡覺音樂</a>
                         <a target="_blank"
@@ -124,12 +124,24 @@
 
         </div>
 
-        <!-- 預設行程 -->
+        <!-- 行程 -->
         <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
             <div class="container mt-5">
                 <h2 class="text-center mb-4">苗栗通霄兩天一夜旅遊行程表</h2>
                 <div style="display: flex;justify-content: space-evenly;">
-                    <span><a href="https://maps.app.goo.gl/TXG9zpGDYzWDAyKB8" target="_blank">完整路線圖</a></span>
+                    <span><a href="https://maps.app.goo.gl/tUTQV6TWAdeshRSF9" target="_blank">完整路線圖</a></span>
+                </div>
+                <div>
+                    候選景點<br><br>
+
+                    提議其他行程：<br>
+                    <a href="https://maps.app.goo.gl/2EBrgii4n6GSroUG6?g_st=com.google.maps.preview.copy">1.陶瓷博物館</a>
+                    <br><br>
+                    <a href="https://maps.app.goo.gl/TSH26f9bC5LjdSdt8?g_st=com.google.maps.preview.copy">2.銅鑼茶廠</a>
+                    <br><br>
+                    <a href="https://maps.app.goo.gl/gkWkCyEjTqM36h6x6?g_st=com.google.maps.preview.copy">3.市集</a>
+                    <br><br>
+
                 </div>
 
                 <div class="d-flex justify-content-between">
@@ -160,14 +172,18 @@
                                 <th>活動名稱</th>
                                 <th>導航</th>
                             </tr>
-                        </thead> 
+                        </thead>
                         <tbody id="schedule2">
 
                         </tbody>
                     </table>
-                </div> 
-            </div>  
+                </div>
+            </div>
         </div>
+
+
+    </div>
+    </div>
     </div>
 
     <!-- 顯示房型輪播圖 -->
